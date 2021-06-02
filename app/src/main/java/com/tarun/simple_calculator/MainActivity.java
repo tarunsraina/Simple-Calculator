@@ -40,129 +40,85 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupView();
-        button0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"0");
-            }
-        });
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"1");
-            }
-        });
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"1");
-            }
-        });
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"2");
-            }
-        });
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"3");
-            }
-        });
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"4");
-            }
-        });
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"5");
-            }
-        });
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"6");
-            }
-        });
-        button7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"7");
-            }
-        });
-        button8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"8");
-            }
-        });
-        button9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(info.getText().toString()+"9");
-            }
+
+        button0.setOnClickListener(v -> {
+            info.setText(info.getText().toString()+"0");
         });
 
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ACTION=ADDITION;
-                compute();
-                result.setText(String.valueOf(value1)+"+");
-                info.setText(null);
-            }
+        button1.setOnClickListener(v -> {
+            info.setText(info.getText().toString()+"1");
         });
 
-        buttonSub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ACTION=SUBTRACTION;
-                compute();
-                result.setText(String.valueOf(value1)+"-");
-                info.setText(null);
-            }
+        button2.setOnClickListener(v -> {
+            info.setText(info.getText().toString()+"2");
         });
 
-        buttonMul.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ACTION=MULTIPLICATION;
-                compute();
-                result.setText(String.valueOf(value1)+"*");
-                info.setText(null);
-            }
-        });
-        buttonDiv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ACTION=DIVISION;
-                compute();
-                result.setText(String.valueOf(value1)+"/");
-                info.setText(null);
-            }
+       button3.setOnClickListener(v -> {
+           info.setText(info.getText().toString()+"3");
+       });
+
+        button4.setOnClickListener(v -> {
+            info.setText(info.getText().toString()+"4");
         });
 
-        buttonAns.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                ACTION=EQU;
-                compute();
-                result.setText(result.getText().toString()+String.valueOf(value2)+"="+String.valueOf(value1));
-                info.setText(null);
-            }
+        button5.setOnClickListener(v -> {
+            info.setText(info.getText().toString()+"5");
         });
 
-        buttonClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                info.setText(null);
-                result.setText(null);
-            }
+        button6.setOnClickListener(v -> {
+            info.setText(info.getText().toString()+"6");
+        });
+
+        button7.setOnClickListener(v -> {
+            info.setText(info.getText().toString()+"7");
+        });
+
+        button8.setOnClickListener(v -> {
+            info.setText(info.getText().toString()+"8");
+        });
+
+        button9.setOnClickListener(v -> {
+            info.setText(info.getText().toString()+"9");
+        });
+
+        buttonAdd.setOnClickListener(v -> {
+            ACTION=ADDITION;
+            compute();
+            result.setText(String.valueOf(value1)+"+");
+            info.setText(null);
+        });
+
+        buttonSub.setOnClickListener(v -> {
+            ACTION=SUBTRACTION;
+            compute();
+            result.setText(String.valueOf(value1)+"-");
+            info.setText(null);
+        });
+
+        buttonMul.setOnClickListener(v -> {
+            ACTION=MULTIPLICATION;
+            compute();
+            result.setText(String.valueOf(value1)+"*");
+            info.setText(null);
+        });
+
+        buttonDiv.setOnClickListener(v -> {
+            ACTION=DIVISION;
+            compute();
+            result.setText(String.valueOf(value1)+"/");
+            info.setText(null);
+        });
+
+        buttonAns.setOnClickListener(v -> {
+            ACTION=EQU;
+            compute();
+            result.setText(result.getText().toString()+String.valueOf(value2)+"="+String.valueOf(value1));
+            info.setText(null);
+        });
+
+        buttonClear.setOnClickListener(v -> {
+            info.setText(null);
+            result.setText(null);
         });
 
     }
