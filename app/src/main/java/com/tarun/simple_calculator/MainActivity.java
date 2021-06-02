@@ -1,7 +1,6 @@
 package com.tarun.simple_calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,74 +43,73 @@ public class MainActivity extends AppCompatActivity {
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"0");
+                info.setText(info.getText().toString()+"0");
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"1");
+                info.setText(info.getText().toString()+"1");
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"1");
+                info.setText(info.getText().toString()+"1");
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"2");
+                info.setText(info.getText().toString()+"2");
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"3");
+                info.setText(info.getText().toString()+"3");
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"4");
+                info.setText(info.getText().toString()+"4");
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"5");
+                info.setText(info.getText().toString()+"5");
             }
         });
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"6");
+                info.setText(info.getText().toString()+"6");
             }
         });
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"7");
+                info.setText(info.getText().toString()+"7");
             }
         });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"8");
+                info.setText(info.getText().toString()+"8");
             }
         });
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                info.setText(result.getText().toString()+"9");
+                info.setText(info.getText().toString()+"9");
             }
         });
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 ACTION=ADDITION;
                 compute();
                 result.setText(String.valueOf(value1)+"+");
@@ -122,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
         buttonSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                compute();
                 ACTION=SUBTRACTION;
+                compute();
                 result.setText(String.valueOf(value1)+"-");
                 info.setText(null);
             }
@@ -132,8 +130,8 @@ public class MainActivity extends AppCompatActivity {
         buttonMul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                compute();
                 ACTION=MULTIPLICATION;
+                compute();
                 result.setText(String.valueOf(value1)+"*");
                 info.setText(null);
             }
@@ -141,8 +139,8 @@ public class MainActivity extends AppCompatActivity {
         buttonDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                compute();
                 ACTION=DIVISION;
+                compute();
                 result.setText(String.valueOf(value1)+"/");
                 info.setText(null);
             }
@@ -152,9 +150,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                compute();
                 ACTION=EQU;
-
+                compute();
                 result.setText(result.getText().toString()+String.valueOf(value2)+"="+String.valueOf(value1));
                 info.setText(null);
             }
@@ -195,10 +192,8 @@ public class MainActivity extends AppCompatActivity {
     {
         if(!Double.isNaN(value1))
         {
-            String str= (String) info.getText();
-            char ch=str.charAt(str.length()-1);
-            String str1=ch+"";
-            value2=Integer.parseInt(str1.toString());
+           String str= (String) info.getText();
+            value2=Integer.parseInt(str.toString());
             switch(ACTION)
             {
                 case ADDITION:
