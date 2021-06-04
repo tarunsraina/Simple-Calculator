@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     final char SUBTRACTION='-';
     final char MULTIPLICATION='*';
     final char DIVISION='/';
-    Double value1=Double.NaN;
-    Double value2;
+    int value1;
+    int value2;
     char ACTION;
     final char EQU=0;
 
@@ -111,13 +110,8 @@ public class MainActivity extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                    compute();
-
-
-
                 ACTION=ADDITION;
+                compute();
                 result.setText(String.valueOf(value1)+"+");
                 info.setText(null);
             }
@@ -126,9 +120,8 @@ public class MainActivity extends AppCompatActivity {
         buttonSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                compute();
                 ACTION=SUBTRACTION;
-
+                compute();
                 result.setText(String.valueOf(value1)+"-");
                 info.setText(null);
             }
@@ -137,9 +130,8 @@ public class MainActivity extends AppCompatActivity {
         buttonMul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                compute();
                 ACTION=MULTIPLICATION;
-
+                compute();
                 result.setText(String.valueOf(value1)+"*");
                 info.setText(null);
             }
@@ -147,9 +139,8 @@ public class MainActivity extends AppCompatActivity {
         buttonDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                compute();
                 ACTION=DIVISION;
-
+                compute();
                 result.setText(String.valueOf(value1)+"/");
                 info.setText(null);
             }
@@ -159,9 +150,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                compute();
                 ACTION=EQU;
-
+                compute();
                 result.setText(result.getText().toString()+String.valueOf(value2)+"="+String.valueOf(value1));
                 info.setText(null);
             }
@@ -200,30 +190,33 @@ public class MainActivity extends AppCompatActivity {
     }
     public void compute()
     {
-            if (!Double.isNaN(value1)) {
-                String str = (String) info.getText();
-                value2 = Double.parseDouble(str.toString());
-                switch (ACTION) {
-                    case ADDITION:
-                        value1 = value1 + value2;
-                        break;
-                    case SUBTRACTION:
-                        value1 = value1 - value2;
-                        break;
-                    case MULTIPLICATION:
-                        value1 = value1 * value2;
-                        break;
-                    case DIVISION:
-                        value1 = value1 / value2;
-                        break;
-                    case EQU:
-                        break;
-                }
-
-            } else {
-                value1 = Double.parseDouble(info.getText().toString());
-
+        if(!Double.isNaN(value1))
+        {
+           String str= (String) info.getText();
+            value2=Integer.parseInt(str.toString());
+            switch(ACTION)
+            {
+                case ADDITION:
+                    value1=value1+value2;
+                    break;
+                case SUBTRACTION:
+                    value1=value1-value2;
+                    break;
+                case MULTIPLICATION:
+                    value1=value1*value2;
+                    break;
+                case DIVISION:
+                    value1=value1/value2;
+                    break;
+                case EQU:
+                    break;
             }
-        }
 
+        }
+        else
+        {
+            value1=Integer.parseInt(info.getText().toString());
+
+        }
     }
+}
